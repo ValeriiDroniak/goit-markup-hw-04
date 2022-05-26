@@ -6,8 +6,12 @@
   --footer-bg-color: #2f303a;
   --text-logo-color: #000000;
   --primary-btn-color: #f5f4fa;
+  --primary-icon-color: #afb1b8;
   --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  --work-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
   --card-set-gap: 30px;
   --section-padding: 94px;
   --border-work: 1px solid #eeeeee;
@@ -124,16 +128,30 @@ img {
 }
 
 .contact-nav .link {
+  display: inline-flex;
+  align-items: center;
   color: var(--title-text-color);
+}
+
+.contact-icon {
+  margin-right: 10px;
+  fill: currentColor;
 }
 
 /* Герой */
 
 .hero {
-  padding-top: 200px;
-  padding-bottom: 200px;
+  display: flex;
+  width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
 
-  background-color: var(--footer-bg-color);
+  background-color: #c4c4c4;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero.jpg);
+
   color: var(--primary-bg-color);
   text-align: center;
 }
@@ -192,6 +210,17 @@ img {
 
 .section-items.no-margin > .item.block {
   margin-top: 0;
+}
+
+.icon-thumb {
+  display: flex;
+  height: 120px;
+  margin-bottom: var(--card-set-gap);
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--primary-btn-color);
+  border-radius: 4px;
 }
 
 .section-title {
@@ -253,16 +282,105 @@ img {
 }
 
 .section-items .text.desc {
+  margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.19;
+}
+
+.icon-social {
+  display: flex;
+  /* height: 120px; */
+  /* margin-bottom: var(--card-set-gap); */
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--primary-icon-color);
+  border-radius: 50%;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  color: var(--primary-bg-color);
+}
+
+.social-link .icon {
+  fill: currentColor;
+}
+
+/* Клієнти */
+
+.client {
+  text-align: center;
+}
+
+.client-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  padding: 0;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  /* text-align: center; */
+}
+
+.client-item > .link {
+  display: flex;
+  padding: 16px 32px;
+
+  color: var(--primary-icon-color);
+  outline: 1px solid var(--primary-icon-color);
+  border-radius: 4px;
+}
+
+.client-item > .link:hover,
+.client-item > .link:focus {
+  color: var(--accent-color);
+  outline: 1px solid var(--accent-color);
+}
+
+.client-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
+}
+
+.client-items > .client-item {
+  flex-basis: calc(100% / 6 - var(--card-set-gap));
+  margin-top: var(--card-set-gap);
+  margin-left: var(--card-set-gap);
+}
+
+.client-item .icon {
+  fill: currentColor;
 }
 
 /* Підвал */
 
 footer {
+  display: flex;
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--footer-bg-color);
+}
+
+.primari-footer {
+  display: flex;
+  align-items: baseline;
+}
+
+.container-address {
+  margin-right: 70px;
 }
 
 .logo.white {
@@ -292,6 +410,32 @@ footer {
 .address-items .link:hover,
 .address-items .link:focus {
   color: var(--accent-color);
+}
+
+.social-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--primary-bg-color);
+}
+
+.icon-social > .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social .social-link {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--primary-bg-color);
+}
+
+.social .social-link:hover,
+.social .social-link:focus {
+  background-color: var(--accent-color);
 }
 
 /* Кнопка */
@@ -348,6 +492,12 @@ footer {
   margin-right: 8px;
 }
 
+.work-filter .btn.secondary:hover,
+.work-filter .btn.secondary:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
 /* Роботи */
 
 .work {
@@ -360,6 +510,8 @@ footer {
 
 .work .card-content {
   padding: 20px 24px;
+  border-left: var(--border-work);
+  border-right: var(--border-work);
 }
 
 .work > .item {
@@ -368,6 +520,11 @@ footer {
   margin-left: var(--card-set-gap);
 
   border-bottom: var(--border-work);
+}
+
+.work .card:hover,
+.work .card:focus {
+  box-shadow: var(--work-shadow);
 }
 
 .link .title {
