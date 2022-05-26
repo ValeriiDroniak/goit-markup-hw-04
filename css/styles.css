@@ -520,8 +520,8 @@ footer {
   border-bottom: var(--border-work);
 }
 
-.work .card:hover,
-.work .card:focus {
+.work > .item:hover,
+.work > .item:focus {
   box-shadow: var(--work-shadow);
 }
 
