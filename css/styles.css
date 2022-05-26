@@ -289,8 +289,6 @@ img {
 
 .icon-social {
   display: flex;
-  /* height: 120px; */
-  /* margin-bottom: var(--card-set-gap); */
   justify-content: space-evenly;
   align-items: center;
 }
@@ -330,7 +328,6 @@ img {
   font-weight: 700;
   font-size: 36px;
   line-height: 42px;
-  /* text-align: center; */
 }
 
 .client-item > .link {
