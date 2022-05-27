@@ -520,8 +520,12 @@ footer {
   border-bottom: var(--border-work);
 }
 
-.work > .item:hover,
-.work > .item:focus {
+.work .link.decoration {
+  display: inline-block;
+}
+
+.work .link.decoration:hover,
+.work .link.decoration:focus {
   box-shadow: var(--work-shadow);
 }
 
